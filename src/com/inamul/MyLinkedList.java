@@ -7,7 +7,7 @@ public class MyLinkedList extends LLFunctions{
         insertLast(70);
         printData();
         System.out.println("\n");
-        deleteFirst();
+        deleteLast();
         printData();
     }
 }
