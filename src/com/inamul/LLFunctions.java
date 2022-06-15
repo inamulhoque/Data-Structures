@@ -53,6 +53,15 @@ public class LLFunctions {
         }
         secondLast.next = null;
     }
+    public static void searchNode(int data){
+        Node temp = firstNode;
+        while (temp.next != null){
+            if (temp.data == data){
+                System.out.println("Data = "+temp.data+" found.");
+            }
+            temp = temp.next;
+        }
+    }
 
     public static void printData(){
         Node temp = firstNode;
