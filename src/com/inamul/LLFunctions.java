@@ -40,6 +40,11 @@ public class LLFunctions {
         temp.next = node;
     }
 
+    public static void deleteFirst(){
+        Node temp = firstNode;
+        firstNode = firstNode.next;
+    }
+
     public static void printData(){
         Node temp = firstNode;
         while (temp!=null){
