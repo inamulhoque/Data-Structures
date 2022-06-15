@@ -17,6 +17,19 @@ public class LLFunctions {
         firstNode = node;
     }
 
+    public static void add(int data) {
+        Node newNode = new Node(data);
+        if(firstNode == null) {
+            firstNode = newNode;
+        }else {
+            Node temp = firstNode;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+    }
+
     public static void insertLast(int data){
         Node temp = firstNode;
         while (temp.next!=null){
@@ -25,9 +38,6 @@ public class LLFunctions {
         Node node = new Node(data);
         node.data = data;
         temp.next = node;
-    }
-
-    public static void insertBetween(int firstData, int lastData){
     }
 
     public static void printData(){
