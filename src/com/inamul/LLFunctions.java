@@ -67,6 +67,21 @@ public class LLFunctions {
         }
         secondLast.next = null;
     }
+
+    public static void deleteAnyNode(int data) {
+        Node temp = firstNode;
+        Node previousNode = firstNode;
+
+        while(temp != null) {
+            if(temp.data == data) {
+                previousNode.next = temp.next;
+                return;
+            }
+            previousNode = temp;
+            temp = temp.next;
+        }
+    }
+
     public static Node searchNode(int data){
         Node temp = firstNode;
         while (temp.next != null){
