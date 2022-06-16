@@ -1,4 +1,7 @@
 package com.inamul;
+
+import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
@@ -9,6 +12,7 @@ class Node {
     }
 }
 public class LLFunctions {
+    static Scanner sc = new Scanner(System.in);
     static Node firstNode;
     public static void insertFirst(int data){
         Node node = new Node(data);
@@ -40,6 +44,16 @@ public class LLFunctions {
         temp.next = node;
     }
 
+    public static void insertInBetween(int previousData,int afterData) {
+        Node temp = firstNode;
+        while(temp.data != previousData) {
+            temp = temp.next;
+        }
+        Node node = new Node(afterData);
+        node.next = temp.next;
+        temp.next = node;
+    }
+
     public static void deleteFirst(){
         Node temp = firstNode;
         firstNode = firstNode.next;
@@ -53,14 +67,16 @@ public class LLFunctions {
         }
         secondLast.next = null;
     }
-    public static void searchNode(int data){
+    public static Node searchNode(int data){
         Node temp = firstNode;
         while (temp.next != null){
             if (temp.data == data){
-                System.out.println("Data = "+temp.data+" found.");
+                System.out.println("Element Found "+data);
+                return temp;
             }
             temp = temp.next;
         }
+        return null;
     }
 
     public static void printData(){
